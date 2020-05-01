@@ -14,7 +14,7 @@ setup(
     scripts=["scripts/*.py"],
     url="https://github.com/cpmech/tlfem",
     license="LICENSE",
-    description="Teaching and Learning the Finite Element Method.",
+    description="Teaching and Learning the Finite Element Method",
     long_description=open("README.md").read(),
-    install_requires=["matplotlib >= 2.2.3", "numpy >= 1.16.2", "scipy >= 1.2.2",],
+    install_requires=["matplotlib", "numpy", "scipy",],
 )
