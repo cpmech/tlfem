@@ -6,15 +6,15 @@ from setuptools import setup, find_packages
 
 setup(
     name="TlFEM",
-    version="1.0.0",
-    author="Dorival M Pedroso",
+    version="1.1.0",
+    author="Dorival Pedroso",
     author_email="dorival.pedroso@gmail.com",
     packages=find_packages(),
     package_data={"": ["data/*.msh", "data/*.cmp"]},
     scripts=["scripts/*.py"],
-    url="http://code.google.com/p/tlfem/",
+    url="https://github.com/cpmech/tlfem",
     license="LICENSE",
     description="Teaching and Learning the Finite Element Method.",
     long_description=open("README.md").read(),
-    install_requires=["matplotlib >= 1.4.2", "numpy >= 1.8.2", "scipy >= 0.14.1",],
+    install_requires=["matplotlib >= 2.2.3", "numpy >= 1.16.2", "scipy >= 1.2.2",],
 )
