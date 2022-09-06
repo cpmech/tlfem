@@ -11,10 +11,10 @@ setup(
     author_email="dorival.pedroso@gmail.com",
     packages=find_packages(),
     package_data={"": ["data/*.msh", "data/*.cmp"]},
-    scripts=["scripts/*.py"],
+    #scripts=["scripts/*.py"],
     url="https://github.com/cpmech/tlfem",
     license="LICENSE",
     description="Teaching and Learning the Finite Element Method",
     long_description=open("README.md").read(),
-    install_requires=["matplotlib", "numpy", "scipy",],
+    #install_requires=["matplotlib", "numpy", "scipy",],
 )

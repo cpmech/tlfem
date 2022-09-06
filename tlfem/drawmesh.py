@@ -5,7 +5,7 @@
 from numpy import array, sqrt, linspace, pi, cos, sin, arctan2, zeros
 from pylab import figure, text, show, axis, gca, gcf, xlabel, ylabel, plot
 from pylab import matplotlib as MPL
-from fig   import GetLightClr, GetClr
+from tlfem.fig import GetLightClr, GetClr
 
 class DrawMesh:
 

@@ -10,8 +10,8 @@ from   scipy.linalg        import eigvals, eig, norm           # solvers from sc
 from   scipy.sparse        import lil_matrix                   # sparse matrix from scipy
 from   scipy.sparse.linalg import spsolve, eigs                # sparse solvers from scipy
 from   scipy.integrate     import odeint                       # ODE integrators from scipy
-from   output              import Output                       # output class
-from   vtu                 import Vtu                          # Vtu class for ParaView files
+from   tlfem.output        import Output                       # output class
+from   tlfem.vtu           import Vtu                          # Vtu class for ParaView files
 
 class Solver:
     def __init__(self, mesh, params):

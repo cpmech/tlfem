@@ -3,8 +3,8 @@
 # license that can be found in the LICENSE file.
 
 from numpy      import array, zeros, dot, transpose, outer, sqrt, ones
-from quadrature import get_ips, ip_coords
-from shape      import get_shape_fcn, shape_derivs, face_integ, face_coords
+from tlfem.quadrature import get_ips, ip_coords
+from tlfem.shape      import get_shape_fcn, shape_derivs, face_integ, face_coords
 
 class EelasticPorous2D:
     def __init__(self, verts, params):

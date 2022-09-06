@@ -5,8 +5,8 @@
 from numpy    import array, cross, zeros  # some functions from numpy
 from numpy    import tan, pi, sqrt, where # more functions from numpy
 from pylab    import axis, show           # used in 'draw' method
-from drawmesh import DrawMesh             # mesh drawing routine
-from fig      import column_nodes         # plotting routines
+from tlfem.drawmesh import DrawMesh       # mesh drawing routine
+from tlfem.fig      import column_nodes   # plotting routines
 
 class Mesh:
     def __init__(self, V, C):

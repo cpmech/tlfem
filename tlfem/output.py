@@ -13,7 +13,7 @@ from   pylab                   import xlabel, ylabel, legend, title    # plottin
 from   mpl_toolkits.axes_grid1 import make_axes_locatable              # to set axes
 from   scipy.interpolate       import griddata                         # to interpolate data
 from   matplotlib.patches      import Polygon                          # to draw polygons
-from   vtu                     import Vtu                              # VTU class for ParaView files
+from   tlfem.vtu               import Vtu                              # VTU class for ParaView files
 
 class Output:
     def __init__(self, sol, t, dtout=None, extrap=False, emethod=2, ext_dtout=None,

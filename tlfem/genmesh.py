@@ -7,8 +7,8 @@ from numpy import transpose, vstack, zeros, ones, arange  # some functions from 
 from numpy import cos, sin, pi, sqrt, vectorize, meshgrid # more functions from numpy
 from numpy import linspace, sort, array, cross, log10     # more functions from numpy
 from numpy import sum as npsum                            # import sum function
-from mesh  import Mesh, Edg2Vids                          # import fem mesh and Edg2Vids
-from fig   import column_nodes                            # calc nodes in a vertical column
+from tlfem.mesh import Mesh, Edg2Vids                     # import fem mesh and Edg2Vids
+from tlfem.fig  import column_nodes                       # calc nodes in a vertical column
 import json                                               # to read json files (.msh)
 
 # additional imports
