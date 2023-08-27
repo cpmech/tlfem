@@ -69,7 +69,10 @@ def PlotSurf(X, Y, Z, xlbl='X', ylbl='Y', zlbl='Z', zmin=None, zmax=None, cmapid
     ax.set_xlabel(xlbl)
     ax.set_ylabel(ylbl)
     ax.set_zlabel(zlbl)
-    ax.plot_surface(X,Y,Z,rstride=1,cstride=1,cmap=Cmap(cmapidx))
+    xx = array(X) if isinstance(X,list) else X
+    yy = array(Y) if isinstance(Y,list) else Y
+    zz = array(Z) if isinstance(Z,list) else Z
+    ax.plot_surface(xx,yy,zz,rstride=1,cstride=1,cmap=Cmap(cmapidx))
     if zmin!=None and zmax!=None:
         ax.set_zlim(zmin,zmax)
     return ax
