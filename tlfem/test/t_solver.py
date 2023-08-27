@@ -821,7 +821,7 @@ def runtest(prob):
         print('maxerr =', maxerr)
 
         # title and show
-        suptitle('theta-medhod: theta=%g, dt=%g' % (theta, dt))
+        suptitle('theta-method: theta=%g, dt=%g' % (theta, dt))
         show()
 
     if prob == 15: # zienk p602
