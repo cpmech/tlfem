@@ -13,6 +13,8 @@ from   scipy.integrate     import odeint                       # ODE integrators
 from   tlfem.output        import Output                       # output class
 from   tlfem.vtu           import Vtu                          # Vtu class for ParaView files
 
+from numpy import ndarray
+
 class Solver:
     def __init__(self, mesh, params):
         """
@@ -470,7 +472,7 @@ class Solver:
 
         # initial values
         t = t0
-        U = zeros(self.neqs) if U0==None else U0
+        U = U0 if isinstance(U0, ndarray) else zeros(self.neqs) 
 
         # output object
         fo = Output(self, t, dtout, extrap, emethod, ext_dtout, vtu_fnkey, vtu_dtout)
