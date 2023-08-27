@@ -2,9 +2,10 @@
 
 set -e
 
-python t_beam.py
-python t_defgrad.py
-python t_mesh.py
-python t_patchrecov.py
-python t_porous.py
-python t_solver.py
+python3 t_beam.py
+python3 t_defgrad.py
+python3 t_mesh.py
+python3 t_patchrecov.py
+python3 t_porous.py
+python3 t_solver.py
+
