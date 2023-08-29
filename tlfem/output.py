@@ -275,6 +275,9 @@ class Output:
                     if eq in self.sol.presc_U_eqs: # equation is prescribed?
                         self.Rout[rkey][n] = R[eq] # set reaction output value
 
+    def out_F(self, F):
+        self.F = F
+
     # --- methods for post-processing -------------------------------------------------------------
 
     def print_res(self, Type='U', wsum=False, tidx=-1, spaces=13, numfmt='%13g'):

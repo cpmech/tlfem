@@ -230,7 +230,7 @@ class Solver:
                 self.outn.update(vids)
             else: self.outn.append(tag_or_id)
 
-    def solve_steady(self, reactions=False, extrap=False, emethod=2, vtu_fnkey=None):
+    def solve_steady(self, reactions=False, extrap=False, emethod=2, vtu_fnkey=None, output_F=False):
         """
         Solve steady-state problem
         ==========================
@@ -239,6 +239,7 @@ class Solver:
             extrap    : extrapolate element values to nodes?
             emethod   : extrapolation method. see Output for details.
             vtu_fnkey : filename key to be used when writing vtu files
+            output_F  : outputs the right-hand side vector: K * U = F
         STORED:
             None
         RETURNS:
@@ -290,12 +291,16 @@ class Solver:
         fo = Output(self, 0., extrap=extrap, emethod=emethod, vtu_fnkey=vtu_fnkey)
 
         # calculate reaction forces
-        if reactions:
+        if reactions or output_F:
             K21 = K21.tocsr()          # convert to sparse matrix
             K22 = K22.tocsr()          # convert to sparse matrix
             W   = K21 * U + K22 * U    # workspace
-            R   = W - F                # reaction forces
-            fo.out_reactions(R)        # store in fo
+            if reactions:
+                R   = W - F            # reaction forces
+                fo.out_reactions(R)    # store in fo
+            if output_F:
+                F[self.eq2] = W[self.eq2]
+                fo.out_F(F)
 
         # output results
         fo.out(1., U)
