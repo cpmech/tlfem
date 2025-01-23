@@ -3,5 +3,5 @@
 ```bash
 sudo python3 setup.py install
 cd tlfem/test
-bash all.bash
+bash run_all.bash
 ```
