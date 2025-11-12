@@ -99,7 +99,7 @@ class FEMmeshDisplayTags(bpy.types.Operator):
     @staticmethod
     def handle_add(self, context):
         FEMmeshDisplayTags._handle = bpy.types.SpaceView3D.draw_handler_add(draw_callback_px, (self, context), 'WINDOW', 'POST_PIXEL')
-        FEMmeshDisplayTags._timer  = context.window_manager.event_timer_add(0.075, context.window)
+        FEMmeshDisplayTags._timer  = context.window_manager.event_timer_add(time_step=0.075, window=context.window)
 
     @staticmethod
     def handle_remove(context):
