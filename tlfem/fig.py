@@ -326,34 +326,34 @@ def ReadT(fnkey, ids, arc_lens=[]):
 # ==================
 def rad_formatting (x, pos=None):
   n = int((x/(pi/6.0))+pi/12.0)
-  if n== 0: return r'$0$'
-  if n== 1: return r'$\frac{\pi}{6}$'
-  if n== 2: return r'$\frac{\pi}{3}$'
-  if n== 3: return r'$\frac{\pi}{2}$'
-  if n== 4: return r'$2\frac{\pi}{3}$'
-  if n== 6: return r'$\pi$'
-  if n== 8: return r'$4\frac{\pi}{3}$'
-  if n== 9: return r'$3\frac{\pi}{2}$'
-  if n==10: return r'$5\frac{\pi}{3}$'
-  if n==12: return r'$2\pi$'
-  return r'$%d\frac{\pi}{6}$'%n
+  if n== 0: return '$0$'
+  if n== 1: return '$\\frac{\\pi}{6}$'
+  if n== 2: return '$\\frac{\\pi}{3}$'
+  if n== 3: return '$\\frac{\\pi}{2}$'
+  if n== 4: return '$2\\frac{\\pi}{3}$'
+  if n== 6: return '$\\pi$'
+  if n== 8: return '$4\\frac{\\pi}{3}$'
+  if n== 9: return '$3\\frac{\\pi}{2}$'
+  if n==10: return '$5\\frac{\\pi}{3}$'
+  if n==12: return '$2\\pi$'
+  return '$%d\\frac{\\pi}{6}$' % n
 
 
 # Radians and degrees formatting
 # ==============================
 def rad_deg_formatting (x, pos=None):
   n = int((x/(pi/6.0))+pi/12.0)
-  if n== 0: return r'$0$'
-  if n== 1: return r'$\frac{\pi}{6}$''\n$30^\circ$'
-  if n== 2: return r'$\frac{\pi}{3}$''\n$60^\circ$'
-  if n== 3: return r'$\frac{\pi}{2}$''\n$90^\circ$'
-  if n== 4: return r'$2\frac{\pi}{3}$''\n$120^\circ$'
-  if n== 6: return r'$\pi$''\n$180^\circ$'
-  if n== 8: return r'$4\frac{\pi}{3}$''\n$240^\circ$'
-  if n== 9: return r'$3\frac{\pi}{2}$''\n$270^\circ$'
-  if n==10: return r'$5\frac{\pi}{3}$''\n$300^\circ$'
-  if n==12: return r'$2\pi$''\n$360^\circ$'
-  return r'$%d\frac{\pi}{6}$''\n$%g^\circ$'%(n,x*180.0/pi)
+  if n== 0: return '$0$'
+  if n== 1: return '$\\frac{\\pi}{6}$\n$30^\\circ$'
+  if n== 2: return '$\\frac{\\pi}{3}$\n$60^\\circ$'
+  if n== 3: return '$\\frac{\\pi}{2}$\n$90^\\circ$'
+  if n== 4: return '$2\\frac{\\pi}{3}$\n$120^\\circ$'
+  if n== 6: return '$\\pi$\n$180^\\circ$'
+  if n== 8: return '$4\\frac{\\pi}{3}$\n$240^\\circ$'
+  if n== 9: return '$3\\frac{\\pi}{2}$\n$270^\\circ$'
+  if n==10: return '$5\\frac{\\pi}{3}$\n$300^\\circ$'
+  if n==12: return '$2\\pi$\n$360^\\circ$'
+  return '$%d\\frac{\\pi}{6}$\n$%g^\\circ$' % (n,x*180.0/pi)
 
 
 # Set radians formatting
@@ -386,23 +386,10 @@ def column_nodes (nc=10, o2=True):
 # test
 # ====
 if __name__=='__main__':
-    #SetForEps ()
-    x = linspace (0, 10, 100)
-    y = x**1.5
-    plot    (x,y, 'b-', label='sim')
-    ver = int(sys.version[0])
-    if ver<3:
-        Arc (0,0,10)
-        Arc (0,0,20, clr='magenta')
-    Arrow   (-10,0,max(x),max(y))
-    Text    (0,25,r'$\sigma$')
-    Text    (0,25,r'$\sigma$',y_offset=-10)
-    axvline (0,color='black',zorder=-1)
-    axhline (0,color='black',zorder=-1)
-    FigGrid ()
-    axis    ('equal')
-    legend  (loc='upper left')
-    xlabel  (r'$x$')
-    ylabel  (r'$y$')
-    show    ()
-    #Save    ('test_msys_fig.eps')
+    x = linspace(0, 2*pi, 100)
+    y = sin(x)
+    plot(x,y, 'b-', label='sim')
+    xRadFmt(gen_ticks=True, rad_and_deg=True)
+    xlabel(r'$x$')
+    ylabel('$\\sin(x)$')
+    savefig('/tmp/test_fig.svg')
