@@ -248,7 +248,7 @@ def GenQplateHole(Lx, Ly, r, nx=5, ny=5, nc=5, tag_hole=True, uniform=True, nit=
         |             |
         |__           |
            '-.        Ly
-              \       |
+              `.      |
         r ---> |______| __ x
     INPUT:
         Lx       : x length
@@ -323,7 +323,7 @@ def GenQdisk(r, nr=5, nc=7, imethod=1, nit=20):
         __
         | `-._           .
         |     `-.        .
-        |        \       .
+        |        `.      .
         |         `.     .
         +--- r --->| --> x
     INPUT:
